@@ -1,0 +1,33 @@
+swipe:
+  3:
+    left:
+      threshold: 1
+      command: 'playerctl previous'
+    right:
+      threshold: 1
+      command: 'playerctl next'
+    up:
+      threshold: 0.24
+      interval: 0.24
+      command: 'pactl -- set-sink-volume 0 +3% && i3-volume output xob >> /tmp/xobpipe'
+    down:
+      threshold: 0.24
+      interval: 0.24
+      command: 'pactl -- set-sink-volume 0 -3% && i3-volume output xob >> /tmp/xobpipe'
+  4:
+    up:
+      threshold: 0.25
+      interval: 0.25
+      command: 'busctl --user call org.clight.clight /org/clight/clight org.clight.clight IncBl d 0.1'
+    down:
+      threshold: 0.25
+      interval: 0.25
+      command: 'busctl --user call org.clight.clight /org/clight/clight org.clight.clight DecBl d 0.1'
+tap:
+  4:
+    command: 'playerctl play-pause'
+plugin: 
+  inputs:
+    libinput_command_input:
+      enable-tap: true
+      verbose: true
