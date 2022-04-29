@@ -1,0 +1,47 @@
+conky.config = {
+  background=true,
+  update_interval=0.01,
+  double_buffer=true,
+  no_buffers=true,
+  imlib_cache_size=10,
+
+  draw_shades=false,
+  draw_outline=false,
+  draw_borders=false,
+
+  gap_x=0,
+  gap_y=0,
+
+  alignment="bottom_middle",
+
+  minimum_height=0,
+  minimum_width=0,
+
+  own_window=true,
+  own_window_type="override",
+  own_window_transparent=true,
+  own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+
+  own_window_argb_visual=true,
+  own_window_argb_value=0,
+
+  use_xft=true,
+  xftalpha=1,
+  font="d2coding:size=9",
+  text_buffer_size=256,
+  override_utf8_locale=true,
+
+  default_color='FFFFFF',
+
+  color0='FFFFFF',
+  color1='FFFFFF',
+}
+
+conky.text = [[
+${exec grep 1 -q /sys/class/power_supply/ADP1/online && echo p || echo b}\
+${exec cat /sys/class/power_supply/CMB0/capacity} \
+c${cpu cpu0} \
+m${memperc} \
+v${exec i3-volume output xob}
+]]
+
