@@ -42,6 +42,8 @@ ${exec grep 1 -q /sys/class/power_supply/ADP1/online && echo p || echo b}\
 ${exec cat /sys/class/power_supply/CMB0/capacity} \
 c${cpu cpu0} \
 m${memperc} \
-v${exec i3-volume output xob}
+v${exec i3-volume output xob} \
+- ${exec date "+%H:%M:%S"}
 ]]
+
 

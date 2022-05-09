@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,28 +95,16 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=$PATH:/home/lth/.spicetify
-export PATH=$PATH:/root/.local/share/gem/ruby/3.0.0/bin
 
+pfetch
 alias npm="pnpm"
 alias vim="nvim"
 alias ssh="kitty +kitten ssh"
 alias g++="g++ -std=c++14"
-
-# nvm
+alias warp="warp-cli"
+alias clear="clear;ls"
+alias disablecam="sudo modprobe -r uvcvideo"
+alias proton="protonvpn-cli"
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-[[ -s /home/lth/.autojump/etc/profile.d/autojump.sh ]] && source /home/lth/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
-
-# using Fucking 
-eval $(thefuck --alias)
-alias tlqkf='fuck'
-alias Tlqkf='fuck'
-alias tq='fuck'
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
